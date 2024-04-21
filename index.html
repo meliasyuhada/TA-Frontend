@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpustakaan Pribadi Koh</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-title">Perpustakaan Pribadi Koh</h1>
+    </header>
+    <div class="container">
+      <div class="column">
+        <div class="">
+          <div class="input_section">
+            <h2>Masukkan Buku Baru</h2>
+            <form id="form">
+              <div class="add-book">
+                <div class="input">
+                  <label for="title">Judul</label>
+                  <input type="text" id="title" placeholder="Judul" required />
+                </div>
+                <div class="input">
+                  <label for="author">Penulis</label>
+                  <input type="text" id="author" placeholder="Penulis" required />
+                </div>
+                <div class="input">
+                  <label for="year">Tahun</label>
+                  <input type="number" id="year" placeholder="Tahun" required />
+                </div>
+                <div class="input_inline">
+                  <label for="inputBookIsComplete">Selesai dibaca</label>
+                  <input id="inputBookIsComplete" type="checkbox" />
+                </div>
+                <button type="button" onclick="addBook()">Tambahkan Buku</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="">
+          <div id="searchBookshelfList" class="search_section">
+            <h2>Cari Buku (Opsional)</h2>
+            <form id="search-form">
+              <label for="search"><strong>Judul</strong></label>
+              <input type="text" id="search" oninput="searchBooks()" placeholder="Cari buku..." />
+            </form>
+          </div>
+        </div>
+        <div class="bookshelves">
+          <div class="">
+            <div class="bookshelf" id="unfinished-shelf">
+              <h2>Belum selesai dibaca</h2>
+              <div id="unfinished-books" class="book_list"></div>
+            </div>
+          </div>
+          <div class="">
+            <div class="bookshelf" id="finished-shelf">
+              <h2>Selesai dibaca</h2>
+              <div id="finished-books" class="book_list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
